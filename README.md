@@ -1,7 +1,9 @@
 # STA Bus Schedule utilizing RESTful API
 
 - co-created by Jason Campbell and Valdyn Hunt
-    - 
+- this API was recognized by STA, and had replaced the previous one
+    - the API test account and API is no longer available
+    
 ## EWU CSCD 378: Web Applications
 
 ### Final Team Project

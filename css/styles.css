@@ -1,0 +1,301 @@
+/***** Variables (Color-Theme) *****/
+:root {
+    --primary-color: #A10022;
+    --secondary-color: #6D6E71;
+    --tertiary-color: #FFFFFF;
+    --quaternary-color: #000000;
+}
+
+
+/***** Atomic Elements *****/
+a, a:visited, a:link, a:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Domine', serif;
+    font-weight: bold;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 3.272em;
+    font-weight: bold;
+    margin: 0;
+    border-bottom: 5px solid var(--secondary-color);
+}
+
+h2 {
+    color: var(--quaternary-color);
+    font-size: 2.618em;
+    margin: 0;
+}
+
+h3 {
+    font-size: 2.023em;
+}
+
+h4 {
+    font-size: 1.618em;
+}
+
+h5 {
+    font-size: 1.25em;
+    text-align: center;
+    margin: 0.4em 0 0.4em 0;
+    text-decoration: underline;
+}
+
+p, li, label, input {
+    font: 2.023em 'Roboto', sans-serif normal;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+
+/***** HTML & Body *****/
+html {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: var(--tertiary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+/***** Container *****/
+div#container {
+    width: 98%;
+    border: 3px solid var(--secondary-color);
+    border-radius: 8px;
+    background: white;
+    margin: 0.2em auto;
+    box-shadow: 2px 2px 2px black;
+}
+
+
+/***** Header *****/
+header {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-column-gap: 1.0em;
+    justify-items: center;
+    align-items: center;
+}
+
+header img {
+    max-height: 100px;
+}
+
+
+header div#title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header div#datetime {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-date {
+    color: var(--primary-color);
+    font-size: 1.618em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.current-time {
+    color: var(--primary-color);
+    font-size: 3.272em;
+    font-weight: bolder;
+}
+
+
+/***** Main *****/
+main {
+    width: 100%;
+}
+
+section {
+    padding: 1.0em;
+}
+
+main div#bus-data {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 0.8em;
+    justify-items: center;
+    align-items: start;
+    padding: 0 1.8em;
+}
+
+main div#bus-data section#alert {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 100%;
+}
+
+main div#bus-data section#alert h4,
+main div#bus-data section#departure h4,
+main div#bus-data section#arrival h4 {
+    font-size: 1.618em;
+    color: var(--tertiary-color);
+    background: var(--primary-color);  
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    margin: 0;
+    padding: 0.2em 0;
+}
+
+div#alerts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 0.4em;
+}
+
+div#alerts ul {
+    list-style: none;
+    border: 3px solid var(--secondary-color);
+    border-radius: 8px;
+    padding: 0.2em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#alerts ul li {
+    text-align: center;
+}
+
+div#alerts ul li.alerts-location {
+    font-size: 2.023em;
+    font-weight: normal;
+    color: var(--quaternary-color);
+}
+
+div#alerts ul li.alerts-route-num {
+    color: var(--primary-color);
+    font-size: 8.567em;
+    font-weight: bold;
+}
+
+div#alerts ul li.alerts-time-left {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: red;
+}
+
+main div#bus-data section#departure {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    max-height: 400px;
+    text-overflow: clip;
+    overflow: hidden;
+}
+
+main div#bus-data section#arrival {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    max-height: 400px;
+    text-overflow: clip;
+    overflow: hidden;
+}
+
+
+div.departures, 
+div.arrivals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-gap: 0.6em;
+    justify-items: center;
+    align-items: start;
+    padding: 0 0.4em;
+    text-overflow: clip;
+    overflow: hidden;
+}
+
+div.arr {
+    text-overflow: clip;
+    overflow: hidden;
+}
+
+
+
+div.departures ul,
+div.arrivals ul {
+    list-style: none;
+    padding-left: 0.2em;
+    margin: 0;
+    text-overflow: clip;
+}
+
+li.depart-info,
+li.arrive-info {
+    padding: 0.2em;
+    font-size: 1.25em;
+    font-weight: normal;
+    color: var(--quaternary-color);
+}
+
+li.depart-info:nth-child(odd),
+li.arrive-info:nth-child(odd) {
+    background: #EEEEEE;
+}
+
+span.route-time {
+    font-weight: bold;
+}
+
+
+/***** Misc *****/
+.custom-bg {
+    background: var(--primary-color);
+}
+
+.custom-fg {
+    color: var(--primary-color);
+}
+
+.show-hex-value {
+    margin-left: 6em;
+    width: 60px;
+}
+
+.italic {
+    font-size: 0.9em;
+    font-style: italic;
+    color: black;
+}
+
+
+/***** Footer *****/
+footer {
+    width: 100%;
+    margin-top: 0.6em;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Page Title -->
+		<title>Team Project</title>
+
+		<!-- Metadata -->
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<meta name="author" content="Jason Campbell & Valdyn Hunt"/>
+
+		<!-- Metadata: Refresh Page every minute -->
+		<meta http-equiv="Refresh" content=""/> 
+		
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png"/>
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png"/>
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png"/>
+		<link rel="manifest" href="img/favicons/site.webmanifest"/>
+		<link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5"/>
+		<meta name="msapplication-TileColor" content="#2b5797"/>
+		<meta name="theme-color" content="#ffffff"/>
+
+		<!-- Manifest -->
+		<link rel="manifest" href="./img/favicons/site.webmanifest"/>
+
+		<!-- Normalize CSS via CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"/>
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Domine&display=swap"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap"/>
+
+		<!-- Styling -->
+		<link rel="stylesheet" href="./css/styles.css"/>
+		<link rel="stylesheet" href="./css/customize.css"/>
+
+		<!-- Plugin: Spectrum (Reference: https://github.com/bgrins/spectrum). -->
+		<link rel='stylesheet' href="./css/spectrum.css"/>
+
+    </head>
+    <body>
+        <div id="container">
+            <header>
+				<img id="logo" src="./img/logo.png" alt="Eastern Washington University" title="Eastern Washington University" />
+				<div id="title">
+					<h1 class="custom1">Eastern Washington University</h1>
+					<h2>STA Bus Routes</h2>
+				</div>
+				<div id="datetime" class="custom1">
+					<p class="current-date"></p>
+					<p class="current-time"></p>
+				</div>
+			</header>
+			<main>
+				<div id="bus-data">
+					<section id="alert">
+						<h4 class="custom1">Alerts</h4>
+						<div id="alerts"></div>
+					</section>
+					<section id="departure">
+						<h4 class="custom1">Departures</h4>
+						<div class="departures"></div>
+					</section>
+					<section id="arrival">
+						<h4 class="custom1">Arrivals</h4>
+						<div class="arrivals"></div>
+					</section>
+				</div>
+				<div id="coordinate-area">
+					<section id="precustomize">
+						<h4>Location</h4>
+						<div class="err0"></div>
+						<!-- <p>Please enter latitude and longitude coordinates of the area you want to cover (pre-set for <a href="https://www.google.com/maps/place/47%C2%B029'32.3%22N+117%C2%B035'00.9%22W/@47.4920386,-117.5842586,18.25z/data=!4m5!3m4!1s0x0:0x0!8m2!3d47.49231!4d-117.583595" target="_blank">EWU's PUB</a>):</p>
+						<p>For your convenience, please visit <a href="https://www.google.com/maps" target="_blank">Google Maps</a> for coordinates</p> -->
+						<p>By selecting a location, all available stops wil be displayed in the customization screen.</p>
+						<p>If selecting <em>other</em>, you will need to supply custom coordinates (<a href="https://www.google.com/maps" target="_blank">Google Maps</a>) that is serviced by STA.</p>
+						<div id="coordinates">
+							<select name="STA-list" id="dropdown-sta" class="target">
+								<option value="ewu" data-loc="ewu">EWU</option>
+								<option value="plaza" data-loc="plaza">STA Plaza</option>
+								<option value="vtc" data-loc="plaza">Valley Transit Center</option>
+								<option value="fivemile" data-loc="plaza">5 Miles Park &amp; Ride</option>
+								<option value="hastings" data-loc="plaza">Hastings Park &amp; Ride</option>
+								<option value="westplains" data-loc="plaza">West Plains Transit Center</option>
+								<option value="other" data-loc="plaza">Other</option>
+							</select>
+							<label for="lat">Latitude
+								<input type="text" id="lat" class="input-text target" title="Enter Latitude" value="47.492310" readonly="readonly" />
+							</label>
+							<label for="lon">Longitude 
+								<input type="text" id="lon" class="input-text target" title="Enter Latitude" value="-117.583595" readonly="readonly" />
+							</label>
+							
+							<!-- <label for="radius">Radius
+								<input type="text" id="radius" class="input-text" title="Enter Radius" placeholder="" />
+							</label> -->
+							<button id="coordinate-save" type="submit">Save Coordinates</button>
+						</div>
+					</section>
+				</div>
+				<div id="customize">
+					<section id="customization">
+						<h4>Initial Customization</h4>
+						<div class="validation"></div>
+						<label for="custom-title">Enter title/company:
+							<input type="text" id="custom-title" class="input-text" name="custom-title" title="Enter title" placeholder="Eastern Washington University" />
+						</label>
+						<div id="upload-logo">
+							Upload Logo:
+							<input type="file" id="file-logo" class="input-file" onchange="previewFile()"/><br/>
+    						<img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" id="customize-logo" alt="Image preview..." title="Image preview..." />
+						</div>
+						<div id="colors">
+							<label for="color1">Primary Color:
+								<input type="text" id="color1" name="color1" value="" />
+							</label>
+							
+							<label for="color2">Secondary Color:
+								<input type="text" id="color2" name="color2" value="" />
+							</label>
+							
+							<label for="color3">Text on Primary Color:
+								<input type="text" id="color3" name="color3" value="" />
+							</label>
+						
+							<label for="color4">Primary Text Color :
+								<input type="text" id="color4" name="color4" value="" />
+							</label>
+						</div>
+					</section>
+					<section id="selected-stops">
+						<h4>Select Stops Serviced (4 stops maximum is recommended)</h4>
+						<div id="available-stops">
+						</div>
+					</section>
+					<div class="validation"></div>
+					<button id="selections" type="submit">Save</button>
+				</div>
+			</main>
+            
+		</div>
+		<footer>
+			<!-- <button id="update-location" class="updates" type="submit">update location</button>
+			<button id="update-customization" class="updates" type="submit">update customization</button> -->
+			<p class="italic">*local storage must be cleared in order to select new area and serviced stops</p>
+		</footer>
+
+        <!-- jQuery Library via CDN -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<!-- Plugin: Spectrum (Reference: https://github.com/bgrins/spectrum) -->
+		<script src='./js/spectrum.js'></script>
+
+		<!-- Scripts: Convert RGB to Hex -->
+		<script src="./js/rgb2hex.js"></script>
+
+		<!-- Scripts -->
+		<script src="./js/scripts.js"></script>
+		<script src="./js/api.js"></script>
+		<script src="./js/customize.js"></script>
+		<script src="./js/options.js"></script>
+        
+    </body>
+</html>

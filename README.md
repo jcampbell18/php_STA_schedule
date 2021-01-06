@@ -22,11 +22,11 @@
       - "badging" allow the user to change background colors (themes)
         - i.e., EWU is red, black or STA is green,blue, and white
   
-###### Starting Screen
+###### Starting Screen (selecting EWU from dropdown)
 
 ![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_start-screen.png)
 
-###### Customization Screen
+###### Customization Screen (using EWU logo and colors)
 
 ![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_customize.png)
 
@@ -34,11 +34,11 @@
 
 ![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_page.png)
 
-###### Starting Screen
+###### Starting Screen (selecting STA Plaze from dropdown)
 
 ![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_start-screen2.png)
 
-###### Customization Screen
+###### Customization Screen (using my own image and misc colors)
 
 ![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_customize2.png)
 

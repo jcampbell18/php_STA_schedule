@@ -23,24 +23,24 @@
   
 ###### Starting Screen (selecting EWU from dropdown)
 
-![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_start-screen.png)
+![Screenshot](https://github.com/jcampbell18/HTML_CSS/blob/main/STA_start-screen.png)
 
 ###### Customization Screen (using EWU logo and colors)
 
-![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_customize.png)
+![Screenshot](https://github.com/jcampbell18/HTML_CSS/blob/main/STA_customize.png)
 
 ###### Alert Screen
 
-![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_page.png)
+![Screenshot](https://github.com/jcampbell18/HTML_CSS/blob/main/STA_page.png)
 
 ###### Starting Screen (selecting STA Plaze from dropdown)
 
-![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_start-screen2.png)
+![Screenshot](https://github.com/jcampbell18/HTML_CSS/blob/main/STA_start-screen2.png)
 
 ###### Customization Screen (using my own image and misc colors)
 
-![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_customize2.png)
+![Screenshot](https://github.com/jcampbell18/HTML_CSS/blob/main/STA_customize2.png)
 
 ###### Alert Screen
 
-![Screenshot](https://github.com/jcampbell18/php/blob/main/STA_page2.png)
+![Screenshot](https://github.com/jcampbell18/HTML_CSS/blob/main/STA_page2.png)
